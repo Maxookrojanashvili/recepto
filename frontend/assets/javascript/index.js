@@ -1,3 +1,44 @@
+const navLinks = [
+  { name: "მთავარი", url: "index.html" },
+  { name: "რეცეპტები", url: "templates/recipe.html" },
+  { name: "ინგრედიენტები", url: "templates/ingredients.html" },
+  { name: "დღის გეგმა", url: "templates/plan.html" }
+];
+
+const currentPage = window.location.pathname.split("/").pop();
+
+const navContainer = document.getElementById("navLinks");
+
+navLinks.forEach(link => {
+  const li = document.createElement("li");
+
+  const a = document.createElement("a");
+  a.href = link.url;
+  a.textContent = link.name;
+
+  // active class ავტომატურად
+  if (link.url === currentPage || (currentPage === "" && link.url === "index.html")) {
+    a.classList.add("active");
+  }
+
+  li.appendChild(a);
+  navContainer.appendChild(li);
+});
+const isLoggedIn = false; // ეს იქნება მომავალში რეალური ლოგიკა
+
+const authContainer = document.getElementById("authButtons");
+
+if (isLoggedIn) {
+  authContainer.innerHTML = `
+    <a href="profile.html" class="btn">პროფილი</a>
+    <a href="logout.html" class="btn">გასვლა</a>
+  `;
+} else {
+  authContainer.innerHTML = `
+    <a href="templates/login.html" class="btn">ავტორიზაცია</a>
+    <a href="templates/register.html" class="btn">რეგისტრაცია</a>
+  `;
+}
 const recipes = [
     { name: "მწვადი" },
     { name: "ხინკალი" },
