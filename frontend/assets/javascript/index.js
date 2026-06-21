@@ -1,8 +1,9 @@
+const isInTemplates = window.location.pathname.includes("/templates");
 const navLinks = [
-  { name: "მთავარი", url: "index.html" },
-  { name: "რეცეპტები", url: "templates/recipe.html" },
-  { name: "ინგრედიენტები", url: "templates/ingredients.html" },
-  { name: "დღის გეგმა", url: "templates/plan.html" }
+{ name: "მთავარი", url: isInTemplates ? "../index.html" : "index.html" },
+{ name: "რეცეპტები", url: isInTemplates ? "recipe.html" : "templates/recipe.html" },
+{ name: "ინგრედიენტები", url: isInTemplates ? "ingredients.html" : "templates/ingredients.html" },
+{ name: "დღის გეგმა", url: isInTemplates ? "plan.html" : "templates/plan.html" }
 ];
 
 const currentPage = window.location.pathname.split("/").pop();

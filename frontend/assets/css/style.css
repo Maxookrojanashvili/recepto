@@ -147,7 +147,6 @@ header {
     align-items: center;
     padding: 40px 0;
 }
-
 .search-box {
     width: min(900px, 90%);
     max-width: 900px;
@@ -228,19 +227,17 @@ header {
 .food-section{
     width: 100%;
     min-height: 700px;
-
     background: url("../images/back2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     justify-content: center;
     align-items: center;
-    gap: 120px;
-
+    gap: 40px;
     padding: 80px 0;
-
     position: relative;
     overflow: hidden;
 }
@@ -280,14 +277,14 @@ header {
     margin-bottom: 50px;
 }
 
-.price{
+.price-box{
     font-size: 28px;
     font-weight: bold;
     color: black;
 }
 
 .price span{
-    font-size: 55px;
+    font-size: 30px;
     color: white;
     margin-left: 15px;
 }
