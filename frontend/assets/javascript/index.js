@@ -40,47 +40,130 @@ if (isLoggedIn) {
     <a href="templates/register.html" class="btn">რეგისტრაცია</a>
   `;
 }
-const recipes = [
+const recipes = [ 
     { name: "მწვადი" },
     { name: "ხინკალი" },
     { name: "აჭარული ხაჭაპური" },
     { name: "ჩაქაფული" }
 ];
 
-function searchRecipe() {
+// 🔹 debounce
+function debounce(fn, delay) {
+    let timeout;
 
-    const input = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+    return function (...args) {
+        clearTimeout(timeout);
 
+        timeout = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    };
+}
+
+// 🔹 highlight match
+function highlight(text, query) {
+    if (!query) return text;
+
+    const regex = new RegExp(`(${query})`, "gi");
+    return text.replace(regex, "<mark>$1</mark>");
+}
+
+let currentIndex = -1;
+let lastResults = [];
+
+// 🔹 render results
+function renderResults(filtered, query) {
     const results = document.getElementById("searchResults");
 
-    results.innerHTML = "";
-
-    if (input === "") {
+    if (query === "") {
+        results.innerHTML = "";
+        results.style.display = "none";
         return;
     }
 
-    const filtered = recipes.filter(recipe =>
-        recipe.name.toLowerCase().includes(input)
-    );
+    results.style.display = "block";
 
     if (filtered.length === 0) {
         results.innerHTML = `
-            <div class="result-item">
+            <div class="result-item empty">
                 ვერაფერი მოიძებნა
             </div>
         `;
         return;
     }
 
-    filtered.forEach(recipe => {
-        results.innerHTML += `
-            <div class="result-item">
-                ${recipe.name}
+    let html = "";
+
+    filtered.forEach((recipe, index) => {
+        html += `
+            <div class="result-item" data-index="${index}">
+                ${highlight(recipe.name, query)}
             </div>
         `;
     });
 
+    results.innerHTML = html;
 }
+
+// 🔹 main search
+function searchRecipe() {
+    const inputEl = document.getElementById("searchInput");
+    const query = inputEl.value.trim().toLowerCase();
+
+    const filtered = recipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(query)
+    );
+
+    lastResults = filtered;
+    currentIndex = -1;
+
+    renderResults(filtered, query);
+}
+
+// 🔹 debounce search
+const debouncedSearch = debounce(searchRecipe, 300);
+
+// 🔹 input event
+document.getElementById("searchInput")
+.addEventListener("input", debouncedSearch);
+
+// 🔹 keyboard navigation
+document.getElementById("searchInput")
+.addEventListener("keydown", (e) => {
+    const items = document.querySelectorAll(".result-item");
+    if (!items.length) return;
+
+    if (e.key === "ArrowDown") {
+        e.preventDefault();
+        currentIndex = (currentIndex + 1) % items.length;
+    }
+
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+    }
+
+    if (e.key === "Enter") {
+        if (items[currentIndex]) {
+            document.getElementById("searchInput").value =
+                items[currentIndex].innerText;
+
+            document.getElementById("searchResults").innerHTML = "";
+        }
+    }
+
+    items.forEach((item, i) => {
+        item.classList.toggle("active", i === currentIndex);
+    });
+});
+
+// 🔹 click select
+document.getElementById("searchResults")
+.addEventListener("click", (e) => {
+    if (e.target.classList.contains("result-item")) {
+        document.getElementById("searchInput").value =
+            e.target.innerText;
+
+        document.getElementById("searchResults").innerHTML = "";
+    }
+});
