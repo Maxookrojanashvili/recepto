@@ -147,16 +147,21 @@ header {
     align-items: center;
     padding: 40px 0;
 }
+
 .search-box {
     width: min(900px, 90%);
     max-width: 900px;
     min-height: 90px;
     background: #ececec;
     border-radius: 50px;
+
     display: flex;
     align-items: center;
     gap: 18px;
+
     padding: 0 25px;
+
+    position: relative; /* 🔥 FIX: dropdown anchor */
 }
 
 .search-box input {
@@ -164,9 +169,11 @@ header {
     border: none;
     outline: none;
     background: transparent;
+
     font-size: 32px;
     font-weight: bold;
     color: #555;
+
     min-width: 0;
 }
 
@@ -187,14 +194,44 @@ header {
     top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
+
     width: min(460px, 90%);
     background: white;
+
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
     overflow: hidden;
     z-index: 1000;
+
+    display: none; /* 🔥 controlled by JS */
 }
 
+.result-item {
+    padding: 18px 30px;
+    font-size: 24px;
+
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+
+    box-sizing: border-box; /* 🔥 stability fix */
+}
+
+.result-item:hover,
+.result-item.active {
+    background: #f3f3f3;
+}
+
+.result-item.empty {
+    color: #000000;
+    cursor: default;
+}
+
+mark {
+    background: rgba(253, 253, 13, 0.866);
+}
+
+/* 🔹 RESPONSIVE */
 @media (max-width: 700px) {
     .search-box {
         min-height: 75px;
@@ -212,16 +249,6 @@ header {
     .search-results {
         width: min(420px, 95%);
     }
-}
-.result-item {
-    padding: 18px 30px;
-    font-size: 24px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.result-item:hover {
-    background: #f3f3f3;
 }
 
 .food-section{
