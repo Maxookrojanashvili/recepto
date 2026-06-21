@@ -3,69 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recepto - საუკეთესო რეცეპტები">
     <title>Recepto</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">--> 
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="navbar">
 
-                <a href="index.html" class="logo">Recepto</a>
-               <ul class="nav-links" id="navLinks"></ul>
-               <div class="buttons" id="authButtons"></div>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Recepto</a>
 
-    <section class="hero">
+            <ul class="nav-links" id="navLinks"></ul>
+
+            <div class="buttons" id="authButtons"></div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
     <div class="search-box">
-         <input
+        <input
             type="text"
             id="searchInput"
             placeholder="ძიება..."
-            onkeyup="searchRecipe()"
         >
-        <button type="button">
-        </button>
     </div>
-    <div id="searchResults" class="search-results"></div>
 
+    <div id="searchResults" class="search-results"></div>
 </section>
+
 <section class="food-section">
 
     <div class="card">
-
         <img src="assets/images/food1.png" alt="ქათმის სალათა">
 
         <div class="card-content">
             <h2>ქათმის სალათა</h2>
 
-            <div class="price-box">
+            <div class="price">
                 ფასი <span>20.00</span>
             </div>
 
             <button class="favorite">♡</button>
         </div>
     </div>
-    <div class="card">
 
+    <div class="card">
         <img src="assets/images/food3.png" alt="შემწვარი ქათამი">
 
         <div class="card-content">
             <h2>შემწვარი ქათამი</h2>
 
-            <div class="price-box">
+            <div class="price">
                 ფასი <span>25.00</span>
             </div>
 
             <button class="favorite">♡</button>
         </div>
-
     </div>
 
 </section>
+
 <footer class="footer">
 
     <div class="footer-container">
@@ -76,10 +76,10 @@
 
         <div class="footer-menu">
             <h3>ნავიგაცია</h3>
-            <a href="#">მთავარი</a>
-            <a href="#">რეცეპტები</a>
-            <a href="#">ინგრედიენტები</a>
-            <a href="#">დღის გეგმა</a>
+            <a href="index.html">მთავარი</a>
+            <a href="templates/recipe.html">რეცეპტები</a>
+            <a href="templates/ingredients.html">ინგრედიენტები</a>
+            <a href="templates/plan.html">დღის გეგმა</a>
         </div>
 
         <div class="footer-contact">
@@ -95,7 +95,7 @@
     </div>
 
 </footer>
+
 <script src="assets/javascript/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
