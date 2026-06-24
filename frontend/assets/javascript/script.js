@@ -22,13 +22,12 @@ toggle.addEventListener("click", () => {
 const passwordInput = document.getElementById("password");
 const togglePassword = document.getElementById("togglePassword");
 
-const loginTab = document.getElementById("loginTab");
-const registerTab = document.getElementById("registerTab");
 
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
 
 loginTab.addEventListener("click", () => {
+
     loginTab.classList.add("active");
     registerTab.classList.remove("active");
 
@@ -37,39 +36,10 @@ loginTab.addEventListener("click", () => {
 });
 
 registerTab.addEventListener("click", () => {
+
     registerTab.classList.add("active");
     loginTab.classList.remove("active");
 
-    registerForm.style.display = "block";
     loginForm.style.display = "none";
-});
-const forgotBtn = document.querySelector(".forgot");
-const modal = document.getElementById("forgotModal");
-const closeModal = document.getElementById("closeModal");
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const forgotBtn = document.querySelector(".forgot");
-    const modal = document.getElementById("forgotModal");
-    const closeModal = document.getElementById("closeModal");
-
-
-});
-const form = document.querySelector("form");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // გვერდის refresh არ მოხდეს
-
-    const email = form.querySelector("input").value;
-
-    if (email === "") {
-        alert("გთხოვ შეიყვანე ელფოსტა");
-        return;
-    }
-
-    // აქ რეალურად backend-ზე უნდა გაგზავნო
-    // მაგრამ ახლა უბრალოდ შეტყობინებას ვაჩვენებთ
-    alert("აღდგენის ლინკი გამოგზავნილია: " + email);
-
-    form.reset();
+    registerForm.style.display = "block";
 });
