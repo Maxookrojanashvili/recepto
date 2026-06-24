@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
+  <meta charset="UTF-8">
+  <title>საქართველოს დინამიური რუკა</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>დააჭირე რეგიონს</h2>
+
+<div class="map-container">
+  <img src="../assets/images/" alt="Georgia Map">
+
+  <!-- კახეთი -->
+  <div class="region kakheti"
+       onmouseenter="showTooltip(event, 'კახეთი - ჩურჩხელა')"
+       onclick="showInfo('კახეთი')"></div>
+
+  <!-- იმერეთი -->
+  <div class="region imereti"
+       onmouseenter="showTooltip(event, 'იმერეთი - იმერული ხაჭაპური')"
+       onclick="showInfo('იმერეთი')"></div>
+
+  <!-- აჭარა -->
+  <div class="region adjara"
+       onmouseenter="showTooltip(event, 'აჭარა - აჭარული ხაჭაპური')"
+       onclick="showInfo('აჭარა')"></div>
+
+  <!-- სამეგრელო -->
+  <div class="region samegrelo"
+       onmouseenter="showTooltip(event, 'სამეგრელო - ელარჯი')"
+       onclick="showInfo('სამეგრელო')"></div>
+
+</div>
+
+<div id="tooltip"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>რეგიონები</title>

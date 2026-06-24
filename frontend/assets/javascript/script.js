@@ -43,3 +43,33 @@ registerTab.addEventListener("click", () => {
     registerForm.style.display = "block";
     loginForm.style.display = "none";
 });
+const forgotBtn = document.querySelector(".forgot");
+const modal = document.getElementById("forgotModal");
+const closeModal = document.getElementById("closeModal");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const forgotBtn = document.querySelector(".forgot");
+    const modal = document.getElementById("forgotModal");
+    const closeModal = document.getElementById("closeModal");
+
+
+});
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); // გვერდის refresh არ მოხდეს
+
+    const email = form.querySelector("input").value;
+
+    if (email === "") {
+        alert("გთხოვ შეიყვანე ელფოსტა");
+        return;
+    }
+
+    // აქ რეალურად backend-ზე უნდა გაგზავნო
+    // მაგრამ ახლა უბრალოდ შეტყობინებას ვაჩვენებთ
+    alert("აღდგენის ლინკი გამოგზავნილია: " + email);
+
+    form.reset();
+});

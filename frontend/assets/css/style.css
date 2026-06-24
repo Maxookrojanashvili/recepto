@@ -251,6 +251,35 @@ mark {
     }
 }
 
+/* CONTENT */
+
+.regions{
+    text-align:center;
+    padding:20px;
+}
+
+.regions h1{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#222;
+}
+
+.map-container img{
+    width:100%;
+    max-width:1000px;
+}
+
+.regions h2{
+    margin-top:25px;
+    margin-bottom:25px;
+    font-size:26px;
+    font-weight:700;
+    color:#222;
+}
+
+
+
 .food-section{
     width: 100%;
     min-height: 700px;
