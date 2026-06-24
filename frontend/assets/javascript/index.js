@@ -25,19 +25,29 @@ navLinks.forEach(link => {
   li.appendChild(a);
   navContainer.appendChild(li);
 });
-const isLoggedIn = false; // ეს იქნება მომავალში რეალური ლოგიკა
+const isLoggedIn = false;
 
 const authContainer = document.getElementById("authButtons");
 
 if (isLoggedIn) {
   authContainer.innerHTML = `
-    <a href="profile.html" class="btn">პროფილი</a>
-    <a href="logout.html" class="btn">გასვლა</a>
+    <a href="${
+      isInTemplates
+        ? "profile.html"
+        : "templates/profile.html"
+    }" class="login-btn">
+      პროფილი
+    </a>
   `;
 } else {
   authContainer.innerHTML = `
-    <a href="templates/login.html" class="btn">ავტორიზაცია</a>
-    <a href="templates/register.html" class="btn">რეგისტრაცია</a>
+    <a href="${
+      isInTemplates
+        ? "login.html"
+        : "templates/login.html"
+    }" class="login-btn">
+      შესვლა
+    </a>
   `;
 }
 const recipes = [ 
