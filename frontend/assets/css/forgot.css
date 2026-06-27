@@ -18,20 +18,20 @@ body {
 }
 .card {
   background: #fff;
-  width: 520px;          /* გაიზარდა */
-  padding: 50px;         /* გაიზარდა */
+  width: 520px;          
+  padding: 50px;         
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 12px 35px rgba(0,0,0,0.12);
 }
 
 h1 {
-  font-size: 28px;       /* გაიზარდა */
+  font-size: 28px;      
   margin-bottom: 15px;
 }
 
 .desc {
-  font-size: 15px;       /* გაიზარდა */
+  font-size: 15px;       
   color: #555;
   margin-bottom: 25px;
   line-height: 1.6;
@@ -39,35 +39,35 @@ h1 {
 
 input {
   width: 100%;
-  padding: 16px;         /* გაიზარდა */
+  padding: 16px;         
   margin-bottom: 18px;
   border: 1px solid #ccc;
   border-radius: 10px;
   outline: none;
-  font-size: 15px;       /* დაემატა */
+  font-size: 15px;       
 }
 
 button {
   width: 100%;
-  padding: 16px;         /* გაიზარდა */
+  padding: 16px;        
   background: #e60000;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 16px;       /* დაემატა */
+  font-size: 16px;       
 }
 
 .back {
   display: block;
   margin-top: 15px;
-  font-size: 14px;       /* გაიზარდა */
+  font-size: 14px;       
   color: #333;
   text-decoration: none;
 }
 
 .message {
   margin-top: 12px;
-  font-size: 14px;       /* გაიზარდა */
+  font-size: 14px;       
 }
