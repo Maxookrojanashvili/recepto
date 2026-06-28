@@ -22,12 +22,24 @@
         <div class="tab" id="registerTab">რეგისტრაცია</div>
     </div>
 
-    <!-- LOGIN -->
+    <!-- ✅ FORM დამატებულია -->
     <form id="loginForm">
-        <input type="email" name="email" placeholder="ელ.ფოსტა" required>
+
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="ელ.ფოსტა" 
+            required
+        >
 
         <div class="password-field">
-            <input type="password" id="password" name="password" placeholder="პაროლი" required>
+            <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="პაროლი" 
+                required
+            >
 
             <span id="togglePassword">
                 <svg id="eyeIcon" width="22" height="22" viewBox="0 0 24 24" fill="#888">
@@ -45,40 +57,61 @@
             <a href="../templates/forgot.html" class="forgot">დაგავიწყდა პაროლი?</a>
         </div>
 
-        <button type="submit" class="btn">შესვლა</button>
+        <!-- ✅ ღილაკი დაემატა -->
+        <button type="submit" class="btn">
+            შესვლა
+        </button>
+
     </form>
+<form id="registerForm" style="display:none;">
 
-    <!-- REGISTER -->
-    <form id="registerForm" style="display:none;">
-        <input type="text" placeholder="სახელი" required>
-        <input type="text" placeholder="გვარი" required>
-        <input type="email" placeholder="ელ.ფოსტა" required>
-        <input type="password" placeholder="პაროლი" required>
-        <input type="password" placeholder="გაიმეორეთ პაროლი" required>
+    <input type="text" placeholder="სახელი" required>
 
-        <button type="submit" class="btn">რეგისტრაცია</button>
-    </form>
+    <input type="text" placeholder="გვარი" required>
 
+    <input type="email" placeholder="ელ.ფოსტა" required>
+
+    <input type="password" placeholder="პაროლი" required>
+
+    <input type="password" placeholder="გაიმეორეთ პაროლი" required>
+
+    <button type="submit" class="btn">
+        რეგისტრაცია
+    </button>
+
+</form> 
     <div class="divider"><span>ან</span></div>
 
     <div class="socials">
-        <!-- GOOGLE LOGIN -->
-        <div class="social" id="googleLoginBtn">
-            <svg width="22" height="22" viewBox="0 0 48 48">
-                <path fill="#EA4335" d="M24 9.5c3.54 0 6.02 1.53 7.4 2.82l5.44-5.44C33.6 3.9 29.2 2 24 2 14.64 2 6.7 7.84 3.6 16.22l6.32 4.9C11.6 14.5 17.3 9.5 24 9.5z"/>
+
+        <div class="social">
+            <!-- Facebook -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2">
+                <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 5.02 3.66 9.19 8.44 10.02v-7.1H7.9v-2.92h2.4V9.41c0-2.37 1.41-3.68 3.57-3.68 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.59l-.41 2.92h-2.18v7.1c4.78-.83 8.44-5-5 8.44-10.02z"/>
             </svg>
         </div>
 
-        <!-- Facebook -->
-        <div class="social">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2">
-                <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 5.02 3.66 9.19 8.44 10.02v-7.1H7.9v-2.92h2.4V9.41c0-2.37 1.41-3.68 3.57-3.68 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.59l-.41 2.92h-2.18v7.1c4.78-.83 8.44-5 5 8.44-10.02z"/>
+        <div class="social" id="googleLogin">
+            <!-- Google -->
+            <svg width="22" height="22" viewBox="0 0 48 48">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.02 1.53 7.4 2.82l5.44-5.44C33.6 3.9 29.2 2 24 2 14.64 2 6.7 7.84 3.6 16.22l6.32 4.9C11.6 14.5 17.3 9.5 24 9.5z"/>
+                <path fill="#34A853" d="M46.1 24.5c0-1.64-.14-2.82-.44-4.05H24v7.66h12.44c-.25 2.02-1.6 5.06-4.6 7.1l7.08 5.5C43.9 36.6 46.1 31.1 46.1 24.5z"/>
+                <path fill="#4A90E2" d="M9.9 28.9c-.5-1.5-.78-3.1-.78-4.9s.28-3.4.78-4.9l-6.3-4.9C2.2 17.2 1.5 20.5 1.5 24s.7 6.8 2.1 9.8l6.3-4.9z"/>
+                <path fill="#FBBC05" d="M24 46c6.5 0 12-2.1 16-5.8l-7.1-5.5c-2 1.4-4.7 2.4-8.9 2.4-6.7 0-12.4-5-14.1-11.6l-6.3 4.9C6.7 40.2 14.6 46 24 46z"/>
             </svg>
         </div>
+
+        <div class="social">
+            <!-- User -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#555">
+                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+        </div>
+
     </div>
 
 </div>
 
-<script src="../assets/javascript/script.js"></script>
+<script type="module" src="../assets/javascript/script.js"></script>
 </body>
 </html>
