@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>რეცეპტები | FoodHub</title>
+
+    <meta name="description"
+        content="აღმოაჩინე გემრიელი ქართული და საერთაშორისო რეცეპტები. ტკბილი, მლაშე, მჟავე და ცხარე კერძების მარტივი ინსტრუქციები ერთ სივრცეში.">
+
+    <link rel="stylesheet" href="../assets/css/recipe.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">Recepto</a>
+
+            <ul class="nav-links" id="navLinks"></ul>
+
+            <div class="buttons" id="authButtons"></div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero"> 
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ძიება..."
+        >
+    </div>
+
+    <div id="searchResults" class="search-results"></div>
+</section>
+
+    <section class="categories">
+
+        <button class="category-btn active" data-category="all">
+            ყველა
+        </button>
+
+        <button class="category-btn" data-category="ტკბილი">
+            ტკბილი
+        </button>
+
+        <button class="category-btn" data-category="მლაშე">
+            მლაშე
+        </button>
+
+        <button class="category-btn" data-category="მჟავე">
+            მჟავე
+        </button>
+
+        <button class="category-btn" data-category="ცხარე">
+            ცხარე
+        </button>
+
+    </section>
+
+    <main>
+        <section
+            id="recipesContainer"
+            class="recipes-container">
+        </section>
+    </main>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            <h2>Recepto</h2>
+        </div>
+
+        <div class="footer-menu">
+            <h3>ნავიგაცია</h3>
+            <a href="index.html">მთავარი</a>
+            <a href="templates/recipe.html">რეცეპტები</a>
+            <a href="templates/ingredients.html">ინგრედიენტები</a>
+            <a href="templates/plan.html">დღის გეგმა</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>კონტაქტი</h3>
+            <p>Email: recepto@gmail.com</p>
+            <p>ტელ: +995 555 12 34 56</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Recepto | ყველა უფლება დაცულია
+    </div>
+
+</footer>
+    <script src="../assets/javascript/recipe.js"></script>
+
+</body>
+</html>

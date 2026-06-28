@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recepto - საუკეთესო რეცეპტები">
+    <title>Recepto</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Recepto</a>
+
+            <ul class="nav-links" id="navLinks"></ul>
+
+            <div class="buttons" id="authButtons"></div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero"> 
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ძიება..."
+        >
+    </div>
+
+    <div id="searchResults" class="search-results"></div>
+</section>
+   <!-- Regions -->
+    <section class="regions">
+
+        <h1>გაეცანი ქართულ კერძებს!</h1>
+
+        <div class="map-container">
+            <img src="assets/images/Region_map.jpg" alt="Georgia Map">
+        </div>
+
+
+    </section>
+<section class="food-section">
+
+    <div class="card">
+        <img src="assets/images/food1.png" alt="ქათმის სალათა">
+
+        <div class="card-content">
+            <h2>ქათმის სალათა</h2>
+
+            <div class="price">
+                ფასი <span>20.00</span>
+            </div>
+
+            <button class="favorite">♡</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="assets/images/food3.png" alt="შემწვარი ქათამი">
+
+        <div class="card-content">
+            <h2>შემწვარი ქათამი</h2>
+
+            <div class="price">
+                ფასი <span>25.00</span>
+            </div>
+
+            <button class="favorite">♡</button>
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            <h2>Recepto</h2>
+        </div>
+
+        <div class="footer-menu">
+            <h3>ნავიგაცია</h3>
+            <a href="index.html">მთავარი</a>
+            <a href="templates/recipe.html">რეცეპტები</a>
+            <a href="templates/ingredients.html">ინგრედიენტები</a>
+            <a href="templates/plan.html">დღის გეგმა</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>კონტაქტი</h3>
+            <p>Email: recepto@gmail.com</p>
+            <p>ტელ: +995 555 12 34 56</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Recepto | ყველა უფლება დაცულია
+    </div>
+
+</footer>
+
+<script src="assets/javascript/index.js"></script>
+</body>
+</html>
